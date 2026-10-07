@@ -35,7 +35,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         }
         public void Init()
         {
-            Map = new Map("Map.txt", ItemManager);
+            Map = new Map("map.txt", ItemManager);
             player = new Player(16, 2, "Player", new Health(Settings.PlayerStartHealth)); // 15th line down from the actual map, not including border, 2nd line to the right.
             enemyManager = new EnemyManager();
             LastEnemyFought = null;
