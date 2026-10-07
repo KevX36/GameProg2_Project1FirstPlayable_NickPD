@@ -35,11 +35,11 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         public static bool IsInFort { get; set; }           // dumb "if inside fort" bool
         public Map(string path, ItemManager itemManager)
         {
-            MakeMap(path, itemManager);
+            MakeMap(itemManager);
         }
-        private void MakeMap(string path, ItemManager itemManager)
+        private void MakeMap(ItemManager itemManager)
         {
-            string[] lines = File.ReadAllLines(path);   // turns each line from the map file we have in our project into a string array. we call it lines.
+            string[] lines = File.ReadAllLines(@"map.txt");   // turns each line from the map file we have in our project into a string array. we call it lines.
             
             int rows = lines.Length;                    // This is the vertical rows
             int cols = lines[0].Length;                 // This is the horizontal rows
