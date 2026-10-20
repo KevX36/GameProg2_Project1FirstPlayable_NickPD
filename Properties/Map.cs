@@ -229,25 +229,32 @@ namespace GameProg2_Project1FirstPlayable_NickPD
 
             int mapY = item.Y;
             int mapX = item.X;
-            Console.WriteLine($"X {mapX} Y {mapY}");
+            
             if (item.X < 0)
             {
                 item.SetPosition(0, item.Y);
+                mapX = item.X;
             }
-            else if (item.X > GameManager.instance.Map._map.GetLength(0))
+            else if (item.X > GameManager.instance.Map._map.GetLength(1)-1)
             {
                 
-                item.SetPosition(GameManager.instance.Map._map.GetLength(0)-1, item.Y);
+                item.SetPosition(GameManager.instance.Map._map.GetLength(1)-1, item.Y);
+                mapX = item.X;
             }
             if (item.Y < 0)
             {
                 item.SetPosition(item.X,0);
+                mapY = item.Y;
             }
-            else if (item.Y > GameManager.instance.Map._map.Length-1)
+            else if (item.Y > GameManager.instance.Map._map.GetLength(0) - 1)
             {
-                item.SetPosition(item.X, GameManager.instance.Map._map.Length-1);
+                item.SetPosition(item.X, GameManager.instance.Map._map.GetLength(0) - 1);
+                mapY = item.Y;
             }
 
+            Console.WriteLine($"X {mapX} Y {mapY}");
+            Console.WriteLine(GameManager.instance.Map._map.GetLength(1));
+            Console.WriteLine(GameManager.instance.Map._map.GetLength(0));
             _map[mapY, mapX] = item.Icon;
 
 
