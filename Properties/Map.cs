@@ -166,10 +166,10 @@ namespace GameProg2_Project1FirstPlayable_NickPD
 
             messageLine++;
 
-            if (!string.IsNullOrEmpty(gameManager.LastMessage))
+            if (!string.IsNullOrEmpty(GameManager.LastMessage))
             {
                 Console.SetCursorPosition(0, messageLine);
-                Console.WriteLine(gameManager.LastMessage);
+                Console.WriteLine(GameManager.LastMessage);
                 Console.Write("Press any key to continue.");
                 Console.ReadKey(true);
 
@@ -178,7 +178,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
                 Console.WriteLine(new string(' ', Console.WindowWidth));
                 Console.Write(new string(' ', Console.WindowWidth));
 
-                gameManager.LastMessage = null;
+                GameManager.LastMessage = null;
             }
 
             if (IsInFort == true)
@@ -221,7 +221,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
 
             int mapY = item.Y - 1;
             int mapX = item.X - 1;
-
+            
             _map[mapY, mapX] = item.Icon;
         }
         public void RemoveItem(Item item)

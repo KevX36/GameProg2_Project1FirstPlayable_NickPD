@@ -18,21 +18,18 @@ namespace GameProg2_Project1FirstPlayable_NickPD
     // make map bigger and not so laggy.
     public class GameManager
     {
-        public Map Map;
-        public Player player;
-        public EnemyManager enemyManager;
-        public ItemManager ItemManager;
+        public static Map Map = new Map("map.txt", ItemManager);
+        public static Player player = new Player(16, 2, "Player", new Health(Settings.PlayerStartHealth)); // 15th line down from the actual map, not including border, 2nd line to the right.
+        public static EnemyManager enemyManager = new EnemyManager();
+        public static ItemManager ItemManager;
 
-        static bool isInFort = false;
+        static  bool isInFort = false;
         static Random random = new Random();
-        public Enemy LastEnemyFought = null;
-        public string LastMessage { get; set; }
+        public static Enemy LastEnemyFought = null;
+        public static string LastMessage { get; set; }
         static bool GameOver = false;
-        public GameManager(Map map, ItemManager itemManager)
-        {
-            Map = map;
-            ItemManager = itemManager;
-        }
+        public static GameManager instance = new GameManager();
+        
         public void Init()
         {
             Map = new Map("map.txt", ItemManager);
@@ -106,7 +103,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
 
             if (item != null)
             {
-                item.OnCollect(player, this);
+                item.OnCollect(player);
                 if (item.RemoveOnCollect)
                 {
                     Map.RemoveItem(item);

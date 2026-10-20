@@ -11,7 +11,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         public Item(int x, int y, char icon) : base(x, y, icon)
         {
         }
-        public abstract void OnCollect(Player player, GameManager gameManager);
+        public abstract void OnCollect(Player player);
         public virtual string CollectMessage { get; protected set; }
         public bool RemoveOnCollect { get; protected set; } = true;
         public virtual char ReplacementTile

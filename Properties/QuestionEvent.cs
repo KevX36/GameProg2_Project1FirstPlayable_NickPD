@@ -16,7 +16,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
             BonesTiles = bonesTiles;
         }
 
-        public override void OnCollect(Player player, GameManager gameManager)
+        public override void OnCollect(Player player)
         {
             Console.SetCursorPosition(0, Console.CursorTop);             // I don't know why this is needed when it works fine for health potions and sparkles
             Console.WriteLine(CollectMessage);
@@ -26,7 +26,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
             if (input == ConsoleKey.Y)
             {
                 player.Health.TakeDamage(5);
-                gameManager.CheckForDeaths();
+                GameManager.instance.CheckForDeaths();
 
                 if (player.Health.Current >= 5)
                 {
@@ -35,7 +35,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
                     {
                         for (int x = BonesTiles.startX; x <= BonesTiles.endX; x++)
                         {
-                            gameManager.Map._map[y, x] = '#';
+                            GameManager.Map._map[y, x] = '#';
                         }
                     }
                     Console.WriteLine("A pile of bones rises from the pits to reveal a new path!");

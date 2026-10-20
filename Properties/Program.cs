@@ -13,16 +13,16 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         static void Main(string[] args)
         {
             ItemManager itemManager = new ItemManager();
-            GameManager gameManager = new GameManager(null, itemManager);
-            gameManager.Init(); // initialize once at the start
+            
+            
 
-            while (!gameManager.CheckForDeaths())
+            while (!GameManager.instance.CheckForDeaths())
             {
-                gameManager.Draw();
+                GameManager.instance.Draw();
 
                 ConsoleKey key = Console.ReadKey(true).Key; // get player input
 
-                gameManager.Update(key); // player then enemies move
+                GameManager.instance.Update(key); // player then enemies move
             }
 
             Console.Clear();
