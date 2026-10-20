@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         }
         public Player(int startY, int startX, string type, Health health) : base(startX, startY, '0', type, health)
         {
+            Debug.Assert(GameManager.instance != null, "Game Manager instance should never be null.");
+
             _weapons.Add(new Weapon("Bronze Sword", new int[] { 5 }, 19));
             _weapons.Add(new Weapon("Iron Sword", new int[] { 8 }, 14));
             _weapons.Add(new Weapon("Steel Sword", new int[] { 12, 13, 14, 15, 16 }, 9));

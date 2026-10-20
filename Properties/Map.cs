@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -33,12 +34,14 @@ namespace GameProg2_Project1FirstPlayable_NickPD
             get { return _map.GetLength(1); }
         }
         public static bool IsInFort { get; set; }           // dumb "if inside fort" bool
-        public Map(string path, ItemManager itemManager)
+        public Map()
         {
-            MakeMap(itemManager);
+            MakeMap();
         }
-        private void MakeMap(ItemManager itemManager)
+        private void MakeMap()
         {
+            Debug.Assert(GameManager.instance != null, "Game Manager instance should never be null.");
+
             string[] lines = File.ReadAllLines(@"map.txt");   // turns each line from the map file we have in our project into a string array. we call it lines.
             
             int rows = lines.Length;                    // This is the vertical rows
@@ -58,8 +61,9 @@ namespace GameProg2_Project1FirstPlayable_NickPD
                     _map[y, x] = lines[y][x];
                 }
             }
-
-            foreach (var item in itemManager.AllItems)
+            
+            
+            foreach (var item in GameManager.instance.ItemManager.AllItems)
             {
                 AddItem(item);
             }

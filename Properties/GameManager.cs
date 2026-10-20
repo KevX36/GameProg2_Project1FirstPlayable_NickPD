@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,25 +19,41 @@ namespace GameProg2_Project1FirstPlayable_NickPD
     // make map bigger and not so laggy.
     public class GameManager
     {
-        public static Map Map = new Map("map.txt", ItemManager);
-        public static Player player = new Player(16, 2, "Player", new Health(Settings.PlayerStartHealth)); // 15th line down from the actual map, not including border, 2nd line to the right.
-        public static EnemyManager enemyManager = new EnemyManager();
-        public static ItemManager ItemManager;
+        public static GameManager instance;
+
+        //public Map Map = new Map();
+        public Map Map;
+        //public Player player = new Player(16, 2, "Player", new Health(Settings.PlayerStartHealth)); // 15th line down from the actual map, not including border, 2nd line to the right.
+        public Player player; // 15th line down from the actual map, not including border, 2nd line to the right.
+        //public EnemyManager enemyManager = new EnemyManager();
+        public EnemyManager enemyManager;
+        public ItemManager ItemManager;
 
         static  bool isInFort = false;
         static Random random = new Random();
         public static Enemy LastEnemyFought = null;
-        public static string LastMessage { get; set; }
+        public static string LastMessage;
         static bool GameOver = false;
-        public static GameManager instance = new GameManager();
         
+        public GameManager()
+        {
+            Debug.Assert(this != null, "Current Game Manager should never be null.");
+
+            instance = this;
+
+            Debug.Assert(instance != null, "Game Manager instance should never be null.");
+
+            Init();
+        }
         public void Init()
         {
-            Map = new Map("map.txt", ItemManager);
+            ItemManager = new ItemManager();
+            Map = new Map();
             player = new Player(16, 2, "Player", new Health(Settings.PlayerStartHealth)); // 15th line down from the actual map, not including border, 2nd line to the right.
             enemyManager = new EnemyManager();
             LastEnemyFought = null;
             GameOver = false;
+            
         }
         public void Update(ConsoleKey? input = null)
         {

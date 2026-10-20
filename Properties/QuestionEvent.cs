@@ -35,7 +35,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
                     {
                         for (int x = BonesTiles.startX; x <= BonesTiles.endX; x++)
                         {
-                            GameManager.Map._map[y, x] = '#';
+                            GameManager.instance.Map._map[y, x] = '#';
                         }
                     }
                     Console.WriteLine("A pile of bones rises from the pits to reveal a new path!");

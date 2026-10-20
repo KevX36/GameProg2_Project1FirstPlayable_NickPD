@@ -12,8 +12,8 @@ namespace GameProg2_Project1FirstPlayable_NickPD
     {
         static void Main(string[] args)
         {
+            GameManager gameManager = new GameManager();
             ItemManager itemManager = new ItemManager();
-            
             
 
             while (!GameManager.instance.CheckForDeaths())

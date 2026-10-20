@@ -14,10 +14,10 @@ namespace GameProg2_Project1FirstPlayable_NickPD
             RemoveOnCollect = true;
         }
 
-        public override void OnCollect(Player player, GameManager gameManager)
+        public override void OnCollect(Player player)
         {
             player.Weapons[3].Repair(1);
-            gameManager.LastMessage = CollectMessage;
+            GameManager.LastMessage = CollectMessage;
         }
     }
 }
