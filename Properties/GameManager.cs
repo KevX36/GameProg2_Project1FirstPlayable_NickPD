@@ -47,12 +47,14 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         }
         public void Init()
         {
-            ItemManager = new ItemManager();
             Map = new Map();
-            player = new Player(16, 2, "Player", new Health(Settings.PlayerStartHealth)); // 15th line down from the actual map, not including border, 2nd line to the right.
+            ItemManager = new ItemManager();
+            instance.Map.AddItemsToMap();
             enemyManager = new EnemyManager();
             LastEnemyFought = null;
             GameOver = false;
+            player = new Player(16, 2, "Player", new Health(Settings.PlayerStartHealth)); // 15th line down from the actual map, not including border, 2nd line to the right.
+            
             
         }
         public void Update(ConsoleKey? input = null)

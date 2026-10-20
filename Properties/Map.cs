@@ -63,6 +63,10 @@ namespace GameProg2_Project1FirstPlayable_NickPD
             }
             
             
+            
+        }
+        public void AddItemsToMap()
+        {
             foreach (var item in GameManager.instance.ItemManager.AllItems)
             {
                 AddItem(item);
@@ -223,10 +227,31 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         {
             _items.Add(item);
 
-            int mapY = item.Y - 1;
-            int mapX = item.X - 1;
-            
+            int mapY = item.Y;
+            int mapX = item.X;
+            Console.WriteLine($"X {mapX} Y {mapY}");
+            if (item.X < 0)
+            {
+                item.SetPosition(0, item.Y);
+            }
+            else if (item.X > GameManager.instance.Map._map.GetLength(0))
+            {
+                
+                item.SetPosition(GameManager.instance.Map._map.GetLength(0)-1, item.Y);
+            }
+            if (item.Y < 0)
+            {
+                item.SetPosition(item.X,0);
+            }
+            else if (item.Y > GameManager.instance.Map._map.Length-1)
+            {
+                item.SetPosition(item.X, GameManager.instance.Map._map.Length-1);
+            }
+
             _map[mapY, mapX] = item.Icon;
+
+
+
         }
         public void RemoveItem(Item item)
         {
