@@ -48,7 +48,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
 
             AllItems.Add(new QuestionEvent(8, 4, (1, 7, 3, 7)));
             AllItems.Add(new QuestionEvent(9, 5, (4, 8, 4, 11)));
-            AllItems.Add(new QuestionEvent(11, 10, (9, 10, 9, 16)));
+            AllItems.Add(new QuestionEvent(11, 10, (9, 10, 9, 14)));
 
         }
     }

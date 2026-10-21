@@ -44,17 +44,17 @@ namespace GameProg2_Project1FirstPlayable_NickPD
             {
                 X = 0;
             }
-            else if (X > GameManager.instance.Map._map.GetLength(1)-1)
+            else if (X > GameManager.instance.Map._map.GetLength(1))
             {
-                X = GameManager.instance.Map._map.GetLength(1)-1;
+                X = GameManager.instance.Map._map.GetLength(1);
             }
             if (Y < 0)
             {
                 Y = 0;
             }
-            else if (Y > GameManager.instance.Map._map.GetLength(0) - 1)
+            else if (Y > GameManager.instance.Map._map.GetLength(0))
             {
-                Y = GameManager.instance.Map._map.GetLength(0) - 1;
+                Y = GameManager.instance.Map._map.GetLength(0);
             }
         }
     }

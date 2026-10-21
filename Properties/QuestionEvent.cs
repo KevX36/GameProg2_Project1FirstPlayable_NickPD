@@ -35,6 +35,25 @@ namespace GameProg2_Project1FirstPlayable_NickPD
                     {
                         for (int x = BonesTiles.startX; x <= BonesTiles.endX; x++)
                         {
+                            Console.WriteLine(x + " " + y);
+                            if (x < 0)
+                            {
+                                return;
+                            }
+                            else if (x > GameManager.instance.Map._map.GetLength(1) - 1)
+                            {
+                                return;
+                            }
+                            if (y < 0)
+                            {
+                                return;
+                            }
+                            else if (y > GameManager.instance.Map._map.GetLength(0) - 1)
+                            {
+                                return;
+
+                            }
+                            
                             GameManager.instance.Map._map[y, x] = '#';
                         }
                     }

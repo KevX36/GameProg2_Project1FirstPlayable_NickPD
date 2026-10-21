@@ -13,7 +13,8 @@ namespace GameProg2_Project1FirstPlayable_NickPD
             int y,
             int health,
             int[] damageRange,
-            string damageRangeDescription
+            string damageRangeDescription,
+            int goldDropped
         ) : base(
             x,
             y,
@@ -21,7 +22,8 @@ namespace GameProg2_Project1FirstPlayable_NickPD
             damageRange,
             damageRangeDescription,
             "Mage",
-            '^'
+            '^',
+            goldDropped
             )
         {
 

@@ -11,10 +11,13 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         public int[] DamageRange { get; }
         public string DamageRangeDescription { get; }
         public int TurnToMove { get; set; }
-        public Enemy(int x, int y, int health, int[] damageRange, string damageRangeDescription, string type, char icon) : base(x, y, icon, type, new Health(health))
+
+        public int goldDropped;
+        public Enemy(int x, int y, int health, int[] damageRange, string damageRangeDescription, string type, char icon, int goldDropped) : base(x, y, icon, type, new Health(health))
         {
             DamageRange = damageRange;
             DamageRangeDescription = damageRangeDescription;
+            this.goldDropped = goldDropped;
         }
         public void DrawEnemy()
         {

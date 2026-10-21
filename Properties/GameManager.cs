@@ -28,13 +28,16 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         //public EnemyManager enemyManager = new EnemyManager();
         public EnemyManager enemyManager;
         public ItemManager ItemManager;
+        
 
         static  bool isInFort = false;
         static Random random = new Random();
         public static Enemy LastEnemyFought = null;
         public static string LastMessage;
         static bool GameOver = false;
-        
+
+        //current gold
+        public int gold = 0;
         public GameManager()
         {
             Debug.Assert(this != null, "Current Game Manager should never be null.");

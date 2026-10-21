@@ -23,6 +23,8 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         // * = sparkles:    pick up a leftover weapon with a single use
         // + = hp potion:   single use heal for 5 health.
 
+        //$ shops
+
         public char[,] _map;
         private List<Item> _items = new List<Item>();
         public int Rows
@@ -227,8 +229,8 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         {
             _items.Add(item);
 
-            int mapY = item.Y;
-            int mapX = item.X;
+            int mapY = item.Y - 1;
+            int mapX = item.X - 1;
             
             if (item.X < 0)
             {
@@ -266,7 +268,27 @@ namespace GameProg2_Project1FirstPlayable_NickPD
 
             int mapY = item.Y - 1;
             int mapX = item.X - 1;
+            if (item.X < 0)
+            {
+                item.SetPosition(0, item.Y);
+                mapX = item.X;
+            }
+            else if (item.X > GameManager.instance.Map._map.GetLength(1) - 1)
+            {
 
+                item.SetPosition(GameManager.instance.Map._map.GetLength(1) - 1, item.Y);
+                mapX = item.X;
+            }
+            if (item.Y < 0)
+            {
+                item.SetPosition(item.X, 0);
+                mapY = item.Y;
+            }
+            else if (item.Y > GameManager.instance.Map._map.GetLength(0) - 1)
+            {
+                item.SetPosition(item.X, GameManager.instance.Map._map.GetLength(0) - 1);
+                mapY = item.Y;
+            }
             _map[mapY, mapX] = item.ReplacementTile;
         }
         public bool IsFort(int y, int x)

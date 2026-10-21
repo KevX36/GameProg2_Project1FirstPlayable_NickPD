@@ -20,6 +20,11 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         public static int MageHealth = 12;
         public static int TheifHealth = 16;
         public static int MyrmidonHealth = 16;
+        public static int BossBarbarianGold = 100;
+        public static int BarbarianGold = 30;
+        public static int MageGold = 20;
+        public static int TheifGold = 20;
+        public static int MyrmidonGold = 30;
 
         // Health potion amount
         public static int HealthPotion = 20;
