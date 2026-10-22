@@ -50,6 +50,10 @@ namespace GameProg2_Project1FirstPlayable_NickPD
             AllItems.Add(new QuestionEvent(9, 5, (4, 8, 4, 11)));
             AllItems.Add(new QuestionEvent(11, 10, (9, 10, 9, 14)));
 
+            AllItems.Add(new Shop(1, 18));
+            AllItems.Add(new Shop(1, 1));
+            AllItems.Add(new Shop(28, 19));
+
         }
     }
 }

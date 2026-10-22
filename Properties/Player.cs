@@ -18,10 +18,10 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         {
             Debug.Assert(GameManager.instance != null, "Game Manager instance should never be null.");
 
-            _weapons.Add(new Weapon("Bronze Sword", new int[] { 5 }, 19));
-            _weapons.Add(new Weapon("Iron Sword", new int[] { 8 }, 14));
-            _weapons.Add(new Weapon("Steel Sword", new int[] { 12, 13, 14, 15, 16 }, 9));
-            _weapons.Add(new Weapon("Silver Sword", new int[] { 16, 18, 20, 24 }, 5));
+            _weapons.Add(new Weapon("Bronze Sword", new int[] { 5 }, Settings.bronzeSwordDurability));
+            _weapons.Add(new Weapon("Iron Sword", new int[] { 8 }, Settings.ironSwordDurability));
+            _weapons.Add(new Weapon("Steel Sword", new int[] { 12, 13, 14, 15, 16 }, Settings.steelSwordDurability));
+            _weapons.Add(new Weapon("Silver Sword", new int[] { 16, 18, 20, 24 }, Settings.silverSwordDurability));
         }
         public (int newY, int newX) MovePlayer(ConsoleKey key)
         {

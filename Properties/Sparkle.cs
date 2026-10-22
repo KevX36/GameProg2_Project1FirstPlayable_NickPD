@@ -10,13 +10,13 @@ namespace GameProg2_Project1FirstPlayable_NickPD
     {
         public Sparkle(int x, int y) : base(x, y, '*')
         {
-            CollectMessage = "Your Silver Sword has gained a little more endurance!";
+            CollectMessage = "You found some gold";
             RemoveOnCollect = true;
         }
-
+        
         public override void OnCollect(Player player)
         {
-            player.Weapons[3].Repair(1);
+            GameManager.instance.gold += Settings.sparkleGold;
             GameManager.LastMessage = CollectMessage;
         }
     }

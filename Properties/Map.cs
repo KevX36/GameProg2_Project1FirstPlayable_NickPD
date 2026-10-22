@@ -150,7 +150,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
 
             Console.SetCursorPosition(0, messageLine);
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.Write($"Player Health: {player.Health.Current}");
+            Console.Write($"Player Health: {player.Health.Current}     Gold: {GameManager.instance.gold}");
             Console.ResetColor();
 
             if (lastEnemy != null)
