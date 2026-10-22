@@ -16,14 +16,14 @@ namespace GameProg2_Project1FirstPlayable_NickPD
         public Shop(int x, int y) : base(x, y, '$')
         {
             CollectMessage = $"You've found a shop \nPress 1 to buy a health potion for {healthPotionCost}\npress 2 to go to weapon repair  for {repairCost}\npress 3 to go to weapon repair  for {repairCost*2}\npress 4 to go to weapon repair  for {repairCost*3}\npress 5 to go to weapon repair  for {repairCost*4}\npress anything else to return";
-            
+            RemoveOnCollect = false;
         }
 
         public override void OnCollect(Player player)
         {
             Console.SetCursorPosition(0, Console.CursorTop); //i reused part of the question event for the shop so this may or may not be needed
             Console.WriteLine(CollectMessage);
-
+            RemoveOnCollect = false;
             var input = Console.ReadKey(true).Key;
             if (input == ConsoleKey.D1)
             {
@@ -99,7 +99,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
             {
                 Console.WriteLine("You left without buying anything");
                 Console.ReadKey(true);
-                RemoveOnCollect = false;
+                
             }
 
         }
