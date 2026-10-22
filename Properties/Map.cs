@@ -214,7 +214,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
             }
 
             char tile = _map[mapY, mapX];
-            return tile == '▓' || tile == '*' || tile == '+' || tile == '█' || tile == '#' || tile == '?';
+            return tile == '▓' || tile == '*' || tile == '+' || tile == '█' || tile == '#' || tile == '?' || tile == '$';
         }
         private bool InBounds(int y, int x) // might be irrelevant
         {

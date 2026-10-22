@@ -283,7 +283,7 @@ namespace GameProg2_Project1FirstPlayable_NickPD
 
             if (!enemy.IsAlive())
             {
-                Console.WriteLine($"You defeated {enemy.Type}!");
+                Console.WriteLine($"You defeated {enemy.Type}!  You got {enemy.goldDropped} gold");
                 instance.gold += enemy.goldDropped;
             }
             else
